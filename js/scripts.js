@@ -3,10 +3,11 @@ let pokemonList = [
     { name: 'Charmander', height: .6, type: ['fire']}, 
     { name: 'Squirtle', height: .5, type: ['water']} 
   ];
-  for (let i=0; i < pokemonList.length; i++){
-    if (pokemonList[i].height >.6){
-      document.write(pokemonList[i].name + " Height: " + pokemonList[i].height + " Wow, that’s big! <br>" );
+
+pokemonList.forEach(function(pokemonList) {
+    if (pokemonList.height >.6){
+      document.write(pokemonList.name + " Height: " + pokemonList.height + " Wow, that’s big! <br>" );
     }else {
-      document.write(pokemonList[i].name + " Height: " + pokemonList[i].height + "<br>");
+      document.write(pokemonList.name + " Height: " + pokemonList.height + "<br>");
     }
-  }
+  })
