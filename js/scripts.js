@@ -4,12 +4,24 @@ let pokemonRepository = function() {
     { name: 'Charmander', height: .6, type: ['fire']}, 
     { name: 'Squirtle', height: .5, type: ['water']} 
   ];
-};
+  ;
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
 
-pokemonList.forEach(function(pokemonList) {
+  function getAll() {
+    return pokemonList;
+  }
+
+  return {
+    add: add,
+    getAll: getAll
+  }}
+
+  pokemonRepository.pokemonList.forEach() {
     if (pokemonList.height >.6){
-      document.write(pokemonList.name + " Height: " + pokemonList.height + " Wow, that’s big! <br>" );
+      document.write(getAll.name + " Height: " + getAll.height + " Wow, that’s big! <br>" );
     }else {
-      document.write(pokemonList.name + " Height: " + pokemonList.height + "<br>");
+      document.write(getAll.name + " Height: " + getAll.height + "<br>");
     }
-  })
+  }
