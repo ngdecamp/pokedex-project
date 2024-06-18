@@ -18,10 +18,10 @@ let pokemonRepository = function() {
     getAll: getAll
   }}
 
-  pokemonRepository.pokemonList.forEach() {
-    if (pokemonList.height >.6){
-      document.write(getAll.name + " Height: " + getAll.height + " Wow, that’s big! <br>" );
-    }else {
-      document.write(getAll.name + " Height: " + getAll.height + "<br>");
+  pokemonRepository.getAll().forEach(pokemon => {
+    if (pokemon.height > .6) {
+      document.write(pokemon.name + " Height: " + pokemon.height + " Wow, that’s big! <br>" );
+    } else {
+      document.write(pokemon.name + " Height: " + pokemon.height + "<br>");
     }
-  }
+  });
