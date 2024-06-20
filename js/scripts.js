@@ -1,10 +1,10 @@
-let pokemonRepository = function() {
+let pokemonRepository = (function() {
   let pokemonList = [
     { name: 'Bulbasaur', height: .7, type: ['grass' , 'poison']}, 
     { name: 'Charmander', height: .6, type: ['fire']}, 
     { name: 'Squirtle', height: .5, type: ['water']} 
   ];
-  ;
+  
   function add(pokemon) {
     pokemonList.push(pokemon);
   }
@@ -16,7 +16,8 @@ let pokemonRepository = function() {
   return {
     add: add,
     getAll: getAll
-  }}
+  };
+})();
 
   pokemonRepository.getAll().forEach(pokemon => {
     if (pokemon.height > .6) {
