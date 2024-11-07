@@ -31,11 +31,5 @@ let pokemonRepository = (function () {
 })();
 
 pokemonRepository.getAll().forEach(function (pokemon) {
-  let element = document.querySelector('.pokemon-list');
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
-  button.classList.add('pokemonbutton');
-  button.innerText = pokemon.name; // Add the pokemon name to the button
-  listItem.appendChild(button);
-  element.appendChild(listItem);
+  pokemonRepository.addListItem(pokemon);
 });
