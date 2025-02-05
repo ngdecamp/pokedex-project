@@ -5,8 +5,9 @@ let pokemonRepository = (function () {
     { name: 'Squirtle', height: .5, type: ['water'] }
   ];
 
-  fuction lognames()
+  function logNames() {
     console.log(pokemonList);
+  }
 
   function add(pokemon) {
     pokemonList.push(pokemon);
@@ -29,7 +30,8 @@ let pokemonRepository = (function () {
   return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
+    logNames: logNames
   };
 })();
 
