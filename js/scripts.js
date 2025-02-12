@@ -35,7 +35,7 @@ let pokemonRepository = (function () {
   }
 
   function loadList() {
-    return fetch(apiUrl).then(fuction (responce) {
+    return fetch(apiUrl).then(fuction (response) {
       return response.json();
     }).then(funtion (json) {
       json.results.forEach(function (item) {
