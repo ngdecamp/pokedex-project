@@ -9,7 +9,7 @@ let pokemonRepository = (function () {
   function add(pokemon) {
     if (
       typeof pokemon === "object" &&
-      "name" in pokemon 
+      "name" in pokemon
     ) {
       pokemonList.push(pokemon);
     } else{
@@ -44,6 +44,7 @@ let pokemonRepository = (function () {
           detailsUrl: item.apiUrl
         };
         add(pokemon);
+        console.log(pokemon);
       }); 
     }).catch(function (e) {
       console.error(e);
@@ -56,9 +57,9 @@ let pokemonRepository = (function () {
       return response.json();
     }).then(function (details) {
       item.imageUrl = details.sprites.front_default;
-      item.height = details.height
-      intem.types = details.types;
-    }).catch(function (e)) {
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function (e) {
       console.error(e);
     });
   }
@@ -83,7 +84,7 @@ let pokemonRepository = (function () {
 // console.log(pokemonRepository.getAll());
 
 pokemonRepository.loadList().then(function() {
-pokemonRepository.getAll().forEach(function (pokemon) {
-  pokemonRepository.addListItem(pokemon);
-});
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
 });
