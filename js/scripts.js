@@ -28,7 +28,7 @@ let pokemonRepository = (function () {
     button.classList.add('pokemonbutton');
     button.innerText = pokemon.name; 
     button.addEventListener('click', function (event) {
-      showDetails(pokemon.name);
+      showDetails(pokemon);
     });
     listItem.appendChild(button);
     element.appendChild(listItem);
@@ -41,10 +41,10 @@ let pokemonRepository = (function () {
       json.results.forEach(function (item) {
         let pokemon = {
           name: item.name,
-          detailsUrl: item.apiUrl
+          detailsUrl: item.url
         };
         add(pokemon);
-        console.log(pokemon);
+        // console.log(pokemon);
       }); 
     }).catch(function (e) {
       console.error(e);
@@ -66,7 +66,7 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+      console.log(pokemon.name);
     });
   }
   
